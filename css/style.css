@@ -1,5 +1,9 @@
 * {box-sizing:border-box}
 
+body {
+  background-image: linear-gradient(to bottom, White, LightBlue, White);
+}
+
 h1 {
   padding: 20px;
   color: Black;
@@ -11,10 +15,9 @@ h1 {
 
 /* Slideshow container */
 .slideshow-container {
-  max-width: 75%;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 40%;
+  position: relative;
+  margin: auto;
 }
 
 /* Hide the images by default */
@@ -23,38 +26,37 @@ h1 {
 }
 
 /* Next & previous buttons */
-.prev, .next {
-  max-width: 75%;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  top: auto;
+.prev {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
   width: auto;
-  margin-top: auto;
   padding: 16px;
+  margin-top: -45px;
   transition: 0.6s ease;
   border-radius: 0 3px 3px 0;
   user-select: none;
-}
-
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
+  background-color: rgba(127,127,127,0.2);
 }
 
 /* Position the "next button" to the right */
 .next {
-  max-width: 75%;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  top: auto;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
   width: auto;
-  margin-top: auto;
   padding: 16px;
+  margin-top: -45px;
   transition: 0.6s ease;
   border-radius: 0 3px 3px 0;
   user-select: none;
+  right: 0;
+  background-color: rgba(127,127,127,0.2);
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(255,255,255,0.8);
 }
 
 /* Fading animation */
