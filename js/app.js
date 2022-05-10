@@ -1,8 +1,28 @@
 window.onload = () => {
   let slideIndex = 1;
   showSlides(slideIndex);
-  document.getElementById('prev').onclick = function() {plusSlides(-1)};
-  document.getElementById('next').onclick = function() {plusSlides(1)};
+  document.getElementById('prev').onclick = function() {
+    plusSlides(-1)
+    var hidePrev = document.querySelector('#prev');
+    if (slideIndex == 1) {
+      hidePrev.style.display = 'none';
+    }
+    else {
+      hidePrev.style.display = '';
+      hideNext.style.display = '';
+    }
+  };
+  document.getElementById('next').onclick = function() {
+    plusSlides(1)
+    var hideNext = document.querySelector('#next');
+    if (slideIndex == 4) {
+      hideNext.style.display = 'none';
+    }
+    else {
+      hidePrev.style.display = '';
+      hideNext.style.display = '';
+    }
+  };
   document.onkeydown = checkKey;
 
   function checkKey(e) {
