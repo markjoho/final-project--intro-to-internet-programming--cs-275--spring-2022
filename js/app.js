@@ -21,10 +21,26 @@ window.onload = () => {
   function checkKey(e) {
     e = e || window.event;
     if (e.keyCode == '37') {
-      plusSlides(-1);
+      if (slideIndex != 1) {
+        plusSlides(-1);
+      }
+      else if (slideIndex == 1) {
+      }
+      document.getElementById('next').style.display = '';
+      if (slideIndex == 1) {
+        document.getElementById('prev').style.display = 'none';
+      }
     }
     else if (e.keyCode == '39') {
-      plusSlides(1);
+      if (slideIndex != 4) {
+        plusSlides(1);
+      }
+      else if (slideIndex == 4) {
+      }
+      document.getElementById('prev').style.display = '';
+      if (slideIndex == 4) {
+        document.getElementById('next').style.display = 'none';
+      }
     }
   }
 
