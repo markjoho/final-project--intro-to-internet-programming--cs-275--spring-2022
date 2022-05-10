@@ -1,26 +1,19 @@
 window.onload = () => {
   let slideIndex = 1;
   showSlides(slideIndex);
+  document.getElementById('prev').style.display = 'none';
   document.getElementById('prev').onclick = function() {
     plusSlides(-1)
-    var hidePrev = document.querySelector('#prev');
+    document.getElementById('next').style.display = '';
     if (slideIndex == 1) {
-      hidePrev.style.display = 'none';
-    }
-    else {
-      hidePrev.style.display = '';
-      hideNext.style.display = '';
+      document.getElementById('prev').style.display = 'none';
     }
   };
   document.getElementById('next').onclick = function() {
     plusSlides(1)
-    var hideNext = document.querySelector('#next');
+    document.getElementById('prev').style.display = '';
     if (slideIndex == 4) {
-      hideNext.style.display = 'none';
-    }
-    else {
-      hidePrev.style.display = '';
-      hideNext.style.display = '';
+      document.getElementById('next').style.display = 'none';
     }
   };
   document.onkeydown = checkKey;
