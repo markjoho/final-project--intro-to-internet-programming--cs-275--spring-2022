@@ -3,6 +3,17 @@ window.onload = () => {
   showSlides(slideIndex);
   document.getElementById('prev').onclick = function() {plusSlides(-1)};
   document.getElementById('next').onclick = function() {plusSlides(1)};
+  document.onkeydown = checkKey;
+
+  function checkKey(e) {
+    e = e || window.event;
+    if (e.keyCode == '37') {
+      plusSlides(-1);
+    }
+    else if (e.keyCode == '39') {
+      plusSlides(1);
+    }
+  }
 
   // Next/previous controls
   let plusSlides = (n) => {
